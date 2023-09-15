@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>jQuery FlexModal - Demo page</title>
+
+    <link rel="stylesheet" href="jquery.flex-modal.css">
+    <link rel="stylesheet" href="demo.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <main class="page-content">
+        <h1>jQuery FlexModal Demo</h1>
+
+        <div class="btn-wrap"> 
+            <button class="btn btn-default" type="button" data-modal-target="#modal-2">Confirmation</button> 
+        </div>
+    </main>
+ 
+
+    <div id="modal-2" class="modal-2 flex-modal-hide" data-close-on-overlay-click="false" data-close-on-esc-key="false" data-close-btn-markup="false">
+        <h3><i style="font-size:90px;color:#008000;" class="fa fa-check-circle-o" aria-hidden="true"></i></h3>
+		<h3 style="color:#008000;">Feedback Submitted Successfully...!</h3>
+         
+        <button class="btn btn-default" type="button">X</button>
+    </div>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="jquery.flex-modal.js"></script>
+
+    <script>
+        $(function( $ ) {
+            $.flexModal.add('#modal-2', function( api ) {
+                $(this).on('click', 'button', function() {
+                    api.close('#modal-2');
+                });
+
+                // Demo events
+                $(this).on('open.flexModal', function() {
+                    console.log('open event triggered');
+                });
+                $(this).on('afterOpen.flexModal', function() {
+                    console.log('afterOpen event triggered');
+                });
+                $(this).on('close.flexModal', function() {
+                    console.log('close event triggered');
+                });
+                $(this).on('afterClose.flexModal', function() {
+                    console.log('afterClose event triggered');
+                });
+            });
+ 
+        });
+    </script>
+
+</body>
+</html>

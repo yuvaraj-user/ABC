@@ -1,0 +1,6 @@
+<?php
+$secureMac1="70-18-8B-71-6B-3E";
+$secureProcess1="128E3C6C-9B4D-13A6-3EB9-516A74C227F5";
+$secureMac2="E0-69-95-12-73-46";
+$secureProcess2="60ADECF2-062A-E011-BC10-E06995127346";
+?>
